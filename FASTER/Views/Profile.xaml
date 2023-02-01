@@ -571,6 +571,8 @@
                                         <mah:NumericUpDown Value="{Binding Path=Profile.ServerCfg.LobbyIdleTimeout}" mah:TextBoxHelper.UseFloatingWatermark="True" mah:TextBoxHelper.Watermark="Lobby Idle Timeout" Margin="5"/>
                                         <mah:NumericUpDown Value="{Binding Path=Profile.ServerCfg.SteamProtocolMaxDataSize}" mah:TextBoxHelper.UseFloatingWatermark="True" mah:TextBoxHelper.Watermark="Steam Protocol Max Data Size" Margin="5,0,5,5"/>
 
+                                        <mah:NumericUpDown Value="{Binding Path=Profile.ServerCfg.ArmaUnitsTimeout}" mah:TextBoxHelper.UseFloatingWatermark="True" mah:TextBoxHelper.Watermark="Arma Units Timeout" Margin="5"/>
+
                                         <StackPanel Orientation="Horizontal">
 
                                         </StackPanel>

@@ -62,6 +62,8 @@ namespace FASTER.Models
         private int    requiredBuild            = 999999999;
         private int    steamProtocolMaxDataSize = 1024;
 
+        private int    armaUnitsTimeout = 30;
+
         //Scripting
         private string serverCommandPassword;
         private string doubleIdDetected;
@@ -496,6 +498,17 @@ namespace FASTER.Models
                 RaisePropertyChanged("SteamProtocolMaxDataSize");
             }
         }
+
+        public int ArmaUnitsTimeout
+        {
+            get => armaUnitsTimeout;
+            set
+            {
+                armaUnitsTimeout = value;
+                RaisePropertyChanged("ArmaUnitsTimeout");
+            }
+        }
+
         #endregion
 
         #region Scripting
@@ -788,6 +801,7 @@ namespace FASTER.Models
                           + $"maxPacketLoss= {maxpacketloss}; // Max packetloss value until server kick the user\r\n"
                           + $"kickClientsOnSlowNetwork[] = {( kickClientOnSlowNetwork ? "{ 1, 1, 1, 1 }" : "{ 0, 0, 0, 0 }")}; //Defines if {{<MaxPing>, <MaxPacketLoss>, <MaxDesync>, <DisconnectTimeout>}} will be logged (0) or kicked (1)\r\n"
                           + $"lobbyIdleTimeout = {lobbyIdleTimeout}; // The amount of time the server will wait before force-starting a mission without a logged-in Admin.\r\n"
+                          + $"armaUnitsTimeout = {armaUnitsTimeout}; // Defines how ling the player will be stuck connecting and wait for armaUnits data. Player will be notified if timeout elapsed and no units data was received.\r\n"
                           + "\r\n"
                           + "\r\n"
                           + "// SCRIPTING ISSUES\r\n"
